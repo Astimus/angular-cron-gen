@@ -198,7 +198,7 @@ export class CronGenComponent {
         } else if (monthDay === '1W') {
             return 'Первый день недели';
         } else {
-            return `${monthDay}${this.cronGenService.appendInt(monthDay)} день`;
+            return `${monthDay} день`;
         }
     }
 

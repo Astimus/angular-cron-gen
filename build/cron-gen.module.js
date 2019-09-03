@@ -330,7 +330,7 @@ var CronGenComponent = function () {
             } else if (monthDay === '1W') {
                 return 'Первый день недели';
             } else {
-                return '' + monthDay + this.cronGenService.appendInt(monthDay) + ' \u0434\u0435\u043D\u044C';
+                return monthDay + ' \u0434\u0435\u043D\u044C';
             }
         }
     }, {
