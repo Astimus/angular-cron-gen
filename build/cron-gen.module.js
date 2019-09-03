@@ -113,13 +113,13 @@ var toConsumableArray = function (arr) {
 
 var ACCEPTABLE_CRON_FORMATS = ['quartz'];
 var DAY_LOOKUPS = {
-    'SUN': 'Sunday',
-    'MON': 'Monday',
-    'TUE': 'Tuesday',
-    'WED': 'Wednesday',
-    'THU': 'Thursday',
-    'FRI': 'Friday',
-    'SAT': 'Saturday'
+    'SUN': 'Воскресенье',
+    'MON': 'Понедельник',
+    'TUE': 'Вторник',
+    'WED': 'Среда',
+    'THU': 'Четверг',
+    'FRI': 'Пятница',
+    'SAT': 'Суббота'
 };
 var MONTH_WEEK_LOOKUPS = {
     '#1': 'Первый',
@@ -324,13 +324,13 @@ var CronGenComponent = function () {
         key: 'monthDayDisplay',
         value: function monthDayDisplay(monthDay) {
             if (monthDay === 'L') {
-                return 'Last Day';
+                return 'Последний день';
             } else if (monthDay === 'LW') {
-                return 'Last Weekday';
+                return 'Последний день недели';
             } else if (monthDay === '1W') {
-                return 'First Weekday';
+                return 'Первый день недели';
             } else {
-                return '' + monthDay + this.cronGenService.appendInt(monthDay) + ' Day';
+                return '' + monthDay + this.cronGenService.appendInt(monthDay) + ' \u0434\u0435\u043D\u044C';
             }
         }
     }, {
