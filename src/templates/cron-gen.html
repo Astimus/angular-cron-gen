@@ -89,7 +89,7 @@
                                     ng-options="minute as minute for minute in $ctrl.selectOptions.minutes"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            минуту(ы) в
+                            мин. в
                             <select class="seconds"
                                     name="minutesSeconds"
                                     ng-show="!$ctrl.parsedOptions.hideSeconds"
@@ -100,7 +100,7 @@
                                     ng-options="second as $ctrl.cronGenService.padNumber(second) for second in $ctrl.selectOptions.seconds"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">cекунду</span>
+                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">cек.</span>
                         </div>
                     </div>
                     <div class="tab-pane"
@@ -127,7 +127,7 @@
                                     ng-options="minute as $ctrl.cronGenService.padNumber(minute) for minute in $ctrl.selectOptions.fullMinutes"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            минут
+                            мин.
                             <select class="seconds"
                                     name="hourlySeconds"
                                     ng-show="!$ctrl.parsedOptions.hideSeconds"
@@ -138,7 +138,7 @@
                                     ng-options="second as $ctrl.cronGenService.padNumber(second) for second in $ctrl.selectOptions.seconds"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">секунд</span>
+                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">сек.</span>
                         </div>
                     </div>
                     <div class="tab-pane"
@@ -153,7 +153,7 @@
                                    ng-model="$ctrl.state.daily.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    checked="checked">
-                            Every
+                            Каждый(каждые)
                             <select class="days"
                                     name="dailyEveryDaysDays"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'daily' || $ctrl.state.daily.subTab !== 'everyDays'"
@@ -163,7 +163,7 @@
                                     ng-options="monthDay as monthDay for monthDay in $ctrl.selectOptions.monthDays"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            day(s) at
+                            день(дня) в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'daily' || $ctrl.state.daily.subTab !== 'everyDays'"
                                     on-change="$ctrl.regenerateCron()"
@@ -183,7 +183,7 @@
                                    ng-model="$ctrl.state.daily.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="daily-radio">
-                            Every week day (Monday through Friday) at
+                            Каждый день недели (с понедельника по пятницу) в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'daily' || $ctrl.state.daily.subTab !== 'everyWeekDay'"
                                     on-change="$ctrl.regenerateCron()"
@@ -207,7 +207,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.MON"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Monday
+                                Понедельник
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -216,7 +216,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.TUE"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Tuesday
+                                Вторник
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -225,7 +225,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.WED"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Wednesday
+                                Среда
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -234,7 +234,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.THU"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Thursday
+                                Четверг
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -243,7 +243,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.FRI"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Friday
+                                Пятница
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -252,7 +252,7 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.SAT"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Saturday
+                                Суббота
                             </div>
                             <div class="col-sm-6">
                                 <input type="checkbox"
@@ -261,10 +261,10 @@
                                        ng-change="$ctrl.regenerateCron()"
                                        ng-model="$ctrl.state.weekly.SUN"
                                        ng-class="$ctrl.parsedOptions.formCheckboxClass">
-                                Sunday
+                                Воскресенье
                             </div>
                         </div>
-                        Start time
+                        Время начала
                         <cron-gen-time-select
                                 is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'weekly'"
                                 on-change="$ctrl.regenerateCron()"
@@ -288,7 +288,7 @@
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="monthly-radio"
                                    checked="checked">
-                            On the
+                            На
                             <select class="month-days"
                                     name="monthlySpecificDayDay"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificDay'"
@@ -298,7 +298,7 @@
                                     ng-options="monthDaysWithLast as $ctrl.monthDayDisplay(monthDaysWithLast) for monthDaysWithLast in $ctrl.selectOptions.monthDaysWithLasts"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            of every
+                            каждого
                             <select class="months-small"
                                     name="monthlySpecificDayMonths"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificDay'"
@@ -308,7 +308,7 @@
                                     ng-options="month as month for month in $ctrl.selectOptions.months"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            month(s) at
+                            месяца в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificDay'"
                                     on-change="$ctrl.regenerateCron()"
@@ -328,7 +328,7 @@
                                    ng-model="$ctrl.state.monthly.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="monthly-radio">
-                            On the
+                            На
                             <select class="day-order-in-month"
                                     name="monthlySpecificWeekDayMonthWeek"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificWeekDay'"
@@ -347,7 +347,7 @@
                                     ng-options="day as $ctrl.dayDisplay(day) for day in $ctrl.selectOptions.days"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            of every
+                            каждого
                             <select class="months-small"
                                     name="monthlySpecificWeekDayMonths"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificWeekDay'"
@@ -357,7 +357,7 @@
                                     ng-options="month as month for month in $ctrl.selectOptions.months"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            month(s) at
+                            месяца в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificWeekDay'"
                                     on-change="$ctrl.regenerateCron()"
@@ -382,7 +382,7 @@
                                    ng-model="$ctrl.state.yearly.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="yearly-radio">
-                            Every
+                            Каждый
                             <select class="months"
                                     name="yearlySpecificMonthDayMonth"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthDay'"
@@ -392,7 +392,7 @@
                                     ng-options="month as $ctrl.monthDisplay(month) for month in $ctrl.selectOptions.months"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            on the
+                            на
                             <select class="month-days"
                                     name="yearlySpecificMonthDayDay"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthDay'"
@@ -402,7 +402,7 @@
                                     ng-options="monthDaysWithLast as $ctrl.monthDayDisplay(monthDaysWithLast) for monthDaysWithLast in $ctrl.selectOptions.monthDaysWithLasts"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            at
+                            в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthDay'"
                                     on-change="$ctrl.regenerateCron()"
@@ -422,7 +422,7 @@
                                    ng-model="$ctrl.state.yearly.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="yearly-radio">
-                            On the
+                            На
                             <select class="day-order-in-month"
                                     name="yearlySpecificMonthWeekMonthWeek"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthWeek'"
@@ -441,7 +441,6 @@
                                     ng-options="day as $ctrl.dayDisplay(day) for day in $ctrl.selectOptions.days"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            of
                             <select class="months"
                                     name="yearlySpecificMonthWeekMontMonth"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthWeek'"
@@ -451,7 +450,7 @@
                                     ng-options="month as $ctrl.monthDisplay(month) for month in $ctrl.selectOptions.months"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            at
+                            в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthWeek'"
                                     on-change="$ctrl.regenerateCron()"
@@ -467,7 +466,7 @@
                     <div class="tab-pane"
                          ng-show="!$ctrl.parsedOptions.hideAdvancedTab"
                          ng-class="{'active': $ctrl.activeTab === 'advanced'}">
-                        Cron Expression
+                        Cron выражение
                         <input type="text"
                                class="advanced-cron-gen-input"
                                name="advancedExpression"
@@ -477,9 +476,9 @@
                                ng-required="$ctrl.activeTab === 'advanced'"
                                ng-class="$ctrl.parsedOptions.formInputClass">
 
-                        <p>More details about how to create these expressions can be found <a
+                        <!-- <p>Инструкция <a
                                 href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html"
-                                target="_blank">here</a>.</p>
+                                target="_blank">here</a>.</p> -->
                     </div>
                 </div>
             </div>
