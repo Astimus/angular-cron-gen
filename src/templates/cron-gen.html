@@ -79,7 +79,7 @@
                          ng-show="!$ctrl.parsedOptions.hideMinutesTab"
                          ng-class="{'active': $ctrl.activeTab === 'minutes'}">
                         <div class="well well-small">
-                            Каждую(ые)
+                            Каждую
                             <select class="minutes"
                                     name="minutesMinutes"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'minutes'"
@@ -89,7 +89,7 @@
                                     ng-options="minute as minute for minute in $ctrl.selectOptions.minutes"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            мин. в
+                            минуту в
                             <select class="seconds"
                                     name="minutesSeconds"
                                     ng-show="!$ctrl.parsedOptions.hideSeconds"
@@ -107,7 +107,7 @@
                          ng-show="!$ctrl.parsedOptions.hideHourlyTab"
                          ng-class="{'active': $ctrl.activeTab === 'hourly'}">
                         <div class="well well-small">
-                            Каждый(ые)
+                            Каждый
                             <select class="hours"
                                     name="hourlyHours"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'hourly'"
@@ -117,7 +117,7 @@
                                     ng-options="hour as hour for hour in $ctrl.selectOptions.hours"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            час(ы) в
+                            час в
                             <select class="minutes"
                                     name="hourlyMinutes"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'hourly'"
@@ -153,7 +153,7 @@
                                    ng-model="$ctrl.state.daily.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    checked="checked">
-                            Каждый(каждые)
+                            Каждый
                             <select class="days"
                                     name="dailyEveryDaysDays"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'daily' || $ctrl.state.daily.subTab !== 'everyDays'"
@@ -163,7 +163,7 @@
                                     ng-options="monthDay as monthDay for monthDay in $ctrl.selectOptions.monthDays"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            день(дня) в
+                            день в
                             <cron-gen-time-select
                                     is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'daily' || $ctrl.state.daily.subTab !== 'everyDays'"
                                     on-change="$ctrl.regenerateCron()"
@@ -264,7 +264,7 @@
                                 Воскресенье
                             </div>
                         </div>
-                        Время начала
+                        Время
                         <cron-gen-time-select
                                 is-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'weekly'"
                                 on-change="$ctrl.regenerateCron()"
@@ -288,7 +288,7 @@
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="monthly-radio"
                                    checked="checked">
-                            На
+                            Каждый
                             <select class="month-days"
                                     name="monthlySpecificDayDay"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificDay'"
@@ -328,7 +328,7 @@
                                    ng-model="$ctrl.state.monthly.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="monthly-radio">
-                            На
+                            Каждый
                             <select class="day-order-in-month"
                                     name="monthlySpecificWeekDayMonthWeek"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'monthly' || $ctrl.state.monthly.subTab !== 'specificWeekDay'"
@@ -392,7 +392,7 @@
                                     ng-options="month as $ctrl.monthDisplay(month) for month in $ctrl.selectOptions.months"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            на
+                            каждый
                             <select class="month-days"
                                     name="yearlySpecificMonthDayDay"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthDay'"
@@ -422,7 +422,7 @@
                                    ng-model="$ctrl.state.yearly.subTab"
                                    ng-class="$ctrl.state.formRadioClass"
                                    name="yearly-radio">
-                            На
+                            Каждый
                             <select class="day-order-in-month"
                                     name="yearlySpecificMonthWeekMonthWeek"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'yearly' || $ctrl.state.yearly.subTab !== 'specificMonthWeek'"
