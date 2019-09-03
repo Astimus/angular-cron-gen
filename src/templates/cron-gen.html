@@ -79,7 +79,7 @@
                          ng-show="!$ctrl.parsedOptions.hideMinutesTab"
                          ng-class="{'active': $ctrl.activeTab === 'minutes'}">
                         <div class="well well-small">
-                            Every
+                            Каждую(ые)
                             <select class="minutes"
                                     name="minutesMinutes"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'minutes'"
@@ -89,8 +89,7 @@
                                     ng-options="minute as minute for minute in $ctrl.selectOptions.minutes"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            minute(s)
-                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">on second</span>
+                            минуту(ы) в
                             <select class="seconds"
                                     name="minutesSeconds"
                                     ng-show="!$ctrl.parsedOptions.hideSeconds"
@@ -101,13 +100,14 @@
                                     ng-options="second as $ctrl.cronGenService.padNumber(second) for second in $ctrl.selectOptions.seconds"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
+                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">cекунду</span>
                         </div>
                     </div>
                     <div class="tab-pane"
                          ng-show="!$ctrl.parsedOptions.hideHourlyTab"
                          ng-class="{'active': $ctrl.activeTab === 'hourly'}">
                         <div class="well well-small">
-                            Every
+                            Каждый(ые)
                             <select class="hours"
                                     name="hourlyHours"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'hourly'"
@@ -117,7 +117,7 @@
                                     ng-options="hour as hour for hour in $ctrl.selectOptions.hours"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            hour(s) on minute
+                            час(ы) в
                             <select class="minutes"
                                     name="hourlyMinutes"
                                     ng-disabled="$ctrl.ngDisabled || $ctrl.activeTab !== 'hourly'"
@@ -127,7 +127,7 @@
                                     ng-options="minute as $ctrl.cronGenService.padNumber(minute) for minute in $ctrl.selectOptions.fullMinutes"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
-                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">and second</span>
+                            минут
                             <select class="seconds"
                                     name="hourlySeconds"
                                     ng-show="!$ctrl.parsedOptions.hideSeconds"
@@ -138,6 +138,7 @@
                                     ng-options="second as $ctrl.cronGenService.padNumber(second) for second in $ctrl.selectOptions.seconds"
                                     ng-class="$ctrl.parsedOptions.formSelectClass">
                             </select>
+                            <span ng-show="!$ctrl.parsedOptions.hideSeconds">секунд</span>
                         </div>
                     </div>
                     <div class="tab-pane"
